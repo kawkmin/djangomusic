@@ -1,0 +1,15 @@
+<div class="w-1/4 mb-10 px-2 overflow-hidden">
+    <a href="{% url 'fundings:detail' funding.pk %}">
+    <div class="w-full h-64 bg-cover bg-center rounded-md mb-3" style="background-image: url({{funding.first_photo}});"></div>
+    <div class="flex justify-between mb-2">
+        <div class="border bg-green-500 border-green-500 text-black rounded py-px px-1">
+            <span class="uppercase font-medium text-white">left funding</span>
+            <span class="text-white font-light">{{funding.music_share}} / {{funding.music_stock}}</span>
+        </div>
+        <div>
+            <i class="fa-solid fa-dollar-sign text-green-600 mx-1"></i>{{funding.share_price}}
+        </div>
+    </div>
+    <span class="text-balck w-11/12 block truncate">{{funding.name}}</span>
+    </a>
+</div>

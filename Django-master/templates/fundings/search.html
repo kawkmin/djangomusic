@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block page_title %}
+    Search
+{% endblock page_title %}
+
+{% block search-bar %}
+{% endblock search-bar %}
+
+{% block content %}
+
+    <form method="get" action="{% url 'fundings:search' %}" class="container mx-auto w-3/5 flex-wrap">
+        {{form.as_p}}
+        <button class="btn text-5xl border rounded-lg bg-red-400 mt-8 mb-8 text-white">Search</button>
+    </form>
+        
+    <h1 class="text-center text-5xl font-bold mb-8">Results</h1>
+
+    <div class="container mx-auto flex flex-col items-center">
+        <div class="flex flex-wrap -mx-40 mb-5 w-full">
+            {% for funding in fundings %}
+                {% include 'mixins/funding_card.html' with funding=funding %}
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock content %}
